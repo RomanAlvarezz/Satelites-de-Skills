@@ -29,14 +29,48 @@ body {
     background-color: rgb(216, 216, 58);
     padding: 30px;
     border-radius: 50%;
+    outline: solid rgb(216, 216, 58) 2px;
+    outline-offset: 3px;
 }
 
-.ring {
+.ring-1 {
     position: absolute;
-    inset: 10px;
+    inset: 35px;
+    border: solid 2px white;
+    border-radius: 50%;
+    animation: ring-rotate 5s infinite linear;
+}
+
+.ring-2 {
+    position: absolute;
+    inset: -15px;
+    border: inset 2px white;
+    border-radius: 50%;
+    animation: ring-rotate 9s infinite linear;
+}
+
+.ring-3 {
+    position: absolute;
+    inset: -65px;
     border: dashed 2px white;
     border-radius: 50%;
-    animation: ring_rotate 10s infinite linear;
+    animation: ring-rotate 12s infinite linear;
+}
+
+.ring-4 {
+    position: absolute;
+    inset: -115px;
+    border: outset 2px white;
+    border-radius: 50%;
+    animation: ring-rotate 10s infinite linear;
+}
+
+.ring-5 {
+    position: absolute;
+    inset: -145px;
+    border: dashed 2px white;
+    border-radius: 50%;
+    animation: ring-rotate 16s infinite linear;
 }
 
 /* 
@@ -48,7 +82,7 @@ inset
 outset
 */
 
-@keyframes ring_rotate {
+@keyframes ring-rotate {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -57,22 +91,72 @@ outset
 	}
 }
 
-.ring .moon {
+.ring-1 .moon-1 {
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
-    font-size: 11px;
+    font-size: 9px;
     font-weight: bold;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     outline: solid rgb(166, 108, 0) 2px;
     outline-offset: 3px;
-    /* animation: moon_rotate 10s infinite linear; */
-
 }
 
-.moon-txt {
+.ring-2 .moon-2 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13px;
+    font-weight: bold;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    outline: solid #28adc4 2px;
+    outline-offset: 3px;
+}
+
+.ring-3 .moon-3 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 15px;
+    font-weight: bold;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    outline: solid #9028c4 2px;
+    outline-offset: 3px;
+}
+
+.ring-4 .moon-4 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    font-weight: bold;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    outline: solid #28c438 2px;
+    outline-offset: 3px;
+}
+
+.ring-5 .moon-5 {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 9px;
+    font-weight: bold;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    outline: solid #c428a7 2px;
+    outline-offset: 3px;
+}
+
+.moon-1-txt {
    background-color: orange; 
    width: 100%;
    height: 100%;
@@ -80,10 +164,54 @@ outset
    align-items: center;
    justify-content: center;
    border-radius: 50%;
-   animation: moon_rotate 10s infinite linear;
+   animation: moon-rotate 5s infinite linear;
 }
 
-@keyframes moon_rotate {
+.moon-2-txt {
+    background-color: #28adc4; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: moon-rotate 9s infinite linear;
+ }
+
+ .moon-3-txt {
+    background-color: #9028c4; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: moon-rotate 12s infinite linear;
+ }
+
+ .moon-4-txt {
+    background-color: #28c438; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: moon-rotate 10s infinite linear;
+ }
+
+ .moon-5-txt {
+    background-color: #d71fb6; 
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    animation: moon-rotate 16s infinite linear;
+ }
+
+ @keyframes moon-rotate {
 	0% {
 		transform: rotate(0deg);
 	}
@@ -91,3 +219,6 @@ outset
 		transform: rotate(-360deg);
 	}
 }
+
+
+
