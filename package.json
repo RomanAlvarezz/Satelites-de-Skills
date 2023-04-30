@@ -1,0 +1,20 @@
+{
+  "name": "satelitesskills",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "sass --watch sass/main.scss css/styles.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RomanAlvarezz/Satelites-de-Skills.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RomanAlvarezz/Satelites-de-Skills/issues"
+  },
+  "homepage": "https://github.com/RomanAlvarezz/Satelites-de-Skills#readme"
+}
