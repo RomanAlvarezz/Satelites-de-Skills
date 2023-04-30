@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
+
 :root {
     --fondo-body: #0f1424;
     --fondo-navbar: #1c1f4a;
@@ -199,9 +201,14 @@ body {
         }
 
         &__sass {
-            display: block;
-            width: 25px;
+            
             animation: moon-rotate 10s infinite linear; 
+
+            img {
+                width: 100%;
+                display: block;
+                width: 25px;
+            }
         }
 
         &__github{
@@ -236,16 +243,17 @@ body {
         }
 
         &__html::after {
+            font-family: 'Ubuntu', sans-serif;
             display: none;
             border-radius: 0 2px 2px 0;
             padding: 3px;
             box-sizing: content-box;
             content: 'HTML';
             text-align: right;
-            width: 43px;
+            width: 46px;
             position: absolute;
             color: #000;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             background-color: var(--orange);
             left: 28px;
@@ -259,16 +267,17 @@ body {
         }
 
         &__css::after {
+            font-family: 'Ubuntu', sans-serif;
             display: none;
             padding: 3px;
             border-radius: 0 2px 2px 0;
             box-sizing: content-box;
             content: 'CSS';
             text-align: right;
-            width: 32px;
+            width: 30px;
             position: absolute;
             color: #000;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             background-color: #28adc4;
             left: 28px;
@@ -281,19 +290,20 @@ body {
             display: initial;
         }
 
-        /*&__sass::after {
-            display: block;
+        &__sass::after {
+            font-family: 'Ubuntu', sans-serif;
+            display: none;
             padding: 3px;
             border-radius: 0 2px 2px 0;
             box-sizing: content-box;
             content: 'SASS';
             text-align: right;
-            width: 32px;
+            width: 40px;
             position: absolute;
             color: #000;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
-            background-color: #28adc4;
+            background-color: var(--red);
             left: 28px;
             top: 50%;
             transform: translateY(-50%);
@@ -302,19 +312,20 @@ body {
     
         &__sass-active::after{
             display: initial;
-        }*/
+        }
 
         &__github::after {
+            font-family: 'Ubuntu', sans-serif;
             display: none;
             padding: 3px;
             border-radius: 0 2px 2px 0;
             box-sizing: content-box;
             content: 'GITHUB';
             text-align: right;
-            width: 60px;
+            width: 61px;
             position: absolute;
             color: #000;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             background-color: var(--green);
             left: 28px;
@@ -328,16 +339,17 @@ body {
         }
 
         &__figma::after {
+            font-family: 'Ubuntu', sans-serif;
             display: none;
             padding: 3px;
             border-radius: 0 2px 2px 0;
             box-sizing: content-box;
             content: 'FIGMA';
             text-align: right;
-            width: 60px;
+            width: 53px;
             position: absolute;
             color: #000;
-            font-size: 12px;
+            font-size: 13px;
             font-weight: bold;
             background-color: var(--violet);
             left: 28px;

@@ -1,12 +1,9 @@
 const d = document;
 const styles = ['inset', 'dashed', 'outset'];
 
-const max = 2;
-const min = 0;
-console.log(Math.floor(Math.random() * ((max-min)+1) + min))
-
 d.addEventListener('click', e => {
     const $element = e.target;
+    console.log($element);
 
     if($element.matches('.moon__html') ||
     $element.matches('.moon__content__html')){
@@ -38,13 +35,16 @@ d.addEventListener('click', e => {
             const randomIndex = Math.floor(Math.random() * 3);
             console.log(randomIndex);
             $ring.style.borderStyle = styles[randomIndex]; 
-        })
+        });
+        return;
     }
 
     if($element.matches('.moon__sass') ||
-    $element.matches('.moon__content__sass')){
-        //d.querySelector('.moon__content__sass').classList.toggle('moon__content__sass-active');
-        console.log('has clickeado el SASS')
+    $element.matches('.moon__content__sass') ||
+    $element.matches('.moon__content__sass img') ){
+        d.querySelector('.moon__content__sass').classList.toggle('moon__content__sass-active');
+        //console.log('has clickeado el SASS');
+        //console.log(e.target);
         return;
     }
 })
