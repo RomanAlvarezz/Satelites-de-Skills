@@ -90,30 +90,40 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    transition: transform 30ms ease-in-out;
+
+    &:active{
+        transform: translate(-50%,-50%) scale(0.9);
+    }
 }
 
 .ring {
     position: absolute;
     border-radius: 50%;
+    border-width: 2px;
+    border-color: white;
+    animation-name: ring-rotate;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
 
     &__1 {
         z-index: 3;
-        border: inset 1px white;
+        border-style: inset;
         inset: 47px;
-        animation: ring-rotate 5s infinite linear;
+        animation-duration: 5s;
     }
 
     &__2 {
         z-index: 2;
-        border: dashed 2px white;
+        border-style: dashed;
         inset: 10px;
-        animation: ring-rotate 10s infinite linear;
+        animation-duration: 10s;
     }
 
     &__3 {
-        border: outset 2px white;
+        border-style: outset;
         inset: -25px;
-        animation: ring-rotate 12s infinite linear;
+        animation-duration: 12s;
     }
 }
 
@@ -134,22 +144,19 @@ body {
     cursor: pointer;
     z-index: 1;
 
-    &__1 {
-        //position: relative;
-        //transform-origin: (0);
+    &__html {
         transform: translate(-50%, -50%);
-        //animation: moon-rotate 5s infinite linear;
         // outline: solid var(--orange) 2px;
         // outline-offset: 3px; 
     }
 
-    &__2 {
+    &__css {
         transform: translate(-50%, -50%);
         /* outline: solid #28adc4 2px;
         outline-offset: 3px; */
     }
 
-    &__3 {
+    &__sass {
         transform: translate(-50%, 50%);
         background-color: var(--red); 
         bottom: 0;
@@ -157,14 +164,14 @@ body {
         outline-offset: 3px; */    
     }
 
-    &__4 {
+    &__github {
         background-color: #000;
         transform: translate(-50%, -50%);
         /* outline: solid var(--orange) 2px;
         outline-offset: 3px; */
     }
 
-    &__5 {
+    &__figma {
         bottom: 0;
         transform: translate(-50%, 50%);
         background-color: var(--violet);
@@ -172,67 +179,44 @@ body {
         outline-offset: 3px; */
     }
 
-    &__3, &__4, &__5 {
+    &__sass, &__github, &__figma {
         border-radius: 50%;
         display: flex;
         justify-content: center;
         align-items: center;
     }
 
-    /*&__1::after {
-        display: none;
-        border-radius: 0 2px 2px 0;
-        box-sizing: content-box;
-        content: 'HTML';
-        text-align: right;
-        width: 43px;
-        padding-right: 2px;
-        position: absolute;
-        color: #000;
-        font-size: 10px;
-        font-weight: bold;
-        background-color: var(--orange);
-        left: 28px;
-        top: 50%;
-        transform: translateY(-50%);
-        clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-    }
-
-    &__1-active::after{
-        display: initial;
-    }*/
-
     &__content {
 
-        &-1 {
+        &__html {
             animation: moon-rotate 5s infinite linear;
             background-color: var(--orange);
         }
 
-        &-2 {
+        &__css {
             animation: moon-rotate 10s infinite linear;
             background-color: #28adc4; 
         }
 
-        &-3 {
+        &__sass {
             display: block;
             width: 25px;
             animation: moon-rotate 10s infinite linear; 
         }
 
-        &-4{
+        &__github{
             font-size: 29px;
             color: var(--green);
             animation: moon-rotate 12s infinite linear;
         }
 
-        &-5 {
+        &__figma {
             font-size: 22px;
             color: #000;
             animation: moon-rotate 12s infinite linear;
         }
 
-        &-1,&-2{
+        &__html, &__css{
             border-radius: 50%;
             padding-top: 2px;
             font-size: 22px;
@@ -243,7 +227,7 @@ body {
             justify-content: center;
         }
 
-        &-4, &-5 {
+        &__github, &__figma {
             width: 100%;
             height: 100%;
             display: flex;
@@ -251,17 +235,17 @@ body {
             justify-content: center; 
         }
 
-        &-1::after {
+        &__html::after {
             display: none;
             border-radius: 0 2px 2px 0;
+            padding: 3px;
             box-sizing: content-box;
             content: 'HTML';
             text-align: right;
             width: 43px;
-            padding-right: 2px;
             position: absolute;
             color: #000;
-            font-size: 10px;
+            font-size: 12px;
             font-weight: bold;
             background-color: var(--orange);
             left: 28px;
@@ -270,7 +254,99 @@ body {
             clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
         }
     
-        &-1-active::after{
+        &__html-active::after{
+            display: initial;
+        }
+
+        &__css::after {
+            display: none;
+            padding: 3px;
+            border-radius: 0 2px 2px 0;
+            box-sizing: content-box;
+            content: 'CSS';
+            text-align: right;
+            width: 32px;
+            position: absolute;
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #28adc4;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+    
+        &__css-active::after{
+            display: initial;
+        }
+
+        /*&__sass::after {
+            display: block;
+            padding: 3px;
+            border-radius: 0 2px 2px 0;
+            box-sizing: content-box;
+            content: 'SASS';
+            text-align: right;
+            width: 32px;
+            position: absolute;
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: #28adc4;
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+    
+        &__sass-active::after{
+            display: initial;
+        }*/
+
+        &__github::after {
+            display: none;
+            padding: 3px;
+            border-radius: 0 2px 2px 0;
+            box-sizing: content-box;
+            content: 'GITHUB';
+            text-align: right;
+            width: 60px;
+            position: absolute;
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: var(--green);
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+    
+        &__github-active::after{
+            display: initial;
+        }
+
+        &__figma::after {
+            display: none;
+            padding: 3px;
+            border-radius: 0 2px 2px 0;
+            box-sizing: content-box;
+            content: 'FIGMA';
+            text-align: right;
+            width: 60px;
+            position: absolute;
+            color: #000;
+            font-size: 12px;
+            font-weight: bold;
+            background-color: var(--violet);
+            left: 28px;
+            top: 50%;
+            transform: translateY(-50%);
+            clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+        }
+    
+        &__figma-active::after{
             display: initial;
         }
     }

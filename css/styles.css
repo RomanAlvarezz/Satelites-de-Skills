@@ -93,28 +93,37 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+  transition: transform 30ms ease-in-out;
+}
+.sun:active {
+  transform: translate(-50%, -50%) scale(0.9);
 }
 
 .ring {
   position: absolute;
   border-radius: 50%;
+  border-width: 2px;
+  border-color: white;
+  animation-name: ring-rotate;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
 }
 .ring__1 {
   z-index: 3;
-  border: inset 1px white;
+  border-style: inset;
   inset: 47px;
-  animation: ring-rotate 5s infinite linear;
+  animation-duration: 5s;
 }
 .ring__2 {
   z-index: 2;
-  border: dashed 2px white;
+  border-style: dashed;
   inset: 10px;
-  animation: ring-rotate 10s infinite linear;
+  animation-duration: 10s;
 }
 .ring__3 {
-  border: outset 2px white;
+  border-style: outset;
   inset: -25px;
-  animation: ring-rotate 12s infinite linear;
+  animation-duration: 12s;
 }
 
 @keyframes ring-rotate {
@@ -132,87 +141,89 @@ body {
   height: 28px;
   cursor: pointer;
   z-index: 1;
-  /*&__1::after {
-      display: none;
-      border-radius: 0 2px 2px 0;
-      box-sizing: content-box;
-      content: 'HTML';
-      text-align: right;
-      width: 43px;
-      padding-right: 2px;
-      position: absolute;
-      color: #000;
-      font-size: 10px;
-      font-weight: bold;
-      background-color: var(--orange);
-      left: 28px;
-      top: 50%;
-      transform: translateY(-50%);
-      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-  }
-
-  &__1-active::after{
-      display: initial;
-  }*/
 }
-.moon__1 {
+.moon__html {
   transform: translate(-50%, -50%);
 }
-.moon__2 {
+.moon__css {
   transform: translate(-50%, -50%);
   /* outline: solid #28adc4 2px;
   outline-offset: 3px; */
 }
-.moon__3 {
+.moon__sass {
   transform: translate(-50%, 50%);
   background-color: var(--red);
   bottom: 0;
   /* outline: solid var(--orange) 2px;
   outline-offset: 3px; */
 }
-.moon__4 {
+.moon__github {
   background-color: #000;
   transform: translate(-50%, -50%);
   /* outline: solid var(--orange) 2px;
   outline-offset: 3px; */
 }
-.moon__5 {
+.moon__figma {
   bottom: 0;
   transform: translate(-50%, 50%);
   background-color: var(--violet);
   /* outline: solid var(--orange) 2px;
   outline-offset: 3px; */
 }
-.moon__3, .moon__4, .moon__5 {
+.moon__sass, .moon__github, .moon__figma {
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.moon__content-1 {
+.moon__content {
+  /*&__sass::after {
+      display: block;
+      padding: 3px;
+      border-radius: 0 2px 2px 0;
+      box-sizing: content-box;
+      content: 'SASS';
+      text-align: right;
+      width: 32px;
+      position: absolute;
+      color: #000;
+      font-size: 12px;
+      font-weight: bold;
+      background-color: #28adc4;
+      left: 28px;
+      top: 50%;
+      transform: translateY(-50%);
+      clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+  }
+
+  &__sass-active::after{
+      display: initial;
+  }*/
+}
+.moon__content__html {
   animation: moon-rotate 5s infinite linear;
   background-color: var(--orange);
 }
-.moon__content-2 {
+.moon__content__css {
   animation: moon-rotate 10s infinite linear;
   background-color: #28adc4;
 }
-.moon__content-3 {
+.moon__content__sass {
   display: block;
   width: 25px;
   animation: moon-rotate 10s infinite linear;
 }
-.moon__content-4 {
+.moon__content__github {
   font-size: 29px;
   color: var(--green);
   animation: moon-rotate 12s infinite linear;
 }
-.moon__content-5 {
+.moon__content__figma {
   font-size: 22px;
   color: #000;
   animation: moon-rotate 12s infinite linear;
 }
-.moon__content-1, .moon__content-2 {
+.moon__content__html, .moon__content__css {
   border-radius: 50%;
   padding-top: 2px;
   font-size: 22px;
@@ -222,24 +233,24 @@ body {
   align-items: center;
   justify-content: center;
 }
-.moon__content-4, .moon__content-5 {
+.moon__content__github, .moon__content__figma {
   width: 100%;
   height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
 }
-.moon__content-1::after {
+.moon__content__html::after {
   display: none;
   border-radius: 0 2px 2px 0;
+  padding: 3px;
   box-sizing: content-box;
   content: "HTML";
   text-align: right;
   width: 43px;
-  padding-right: 2px;
   position: absolute;
   color: #000;
-  font-size: 10px;
+  font-size: 12px;
   font-weight: bold;
   background-color: var(--orange);
   left: 28px;
@@ -247,7 +258,70 @@ body {
   transform: translateY(-50%);
   clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
 }
-.moon__content-1-active::after {
+.moon__content__html-active::after {
+  display: initial;
+}
+.moon__content__css::after {
+  display: none;
+  padding: 3px;
+  border-radius: 0 2px 2px 0;
+  box-sizing: content-box;
+  content: "CSS";
+  text-align: right;
+  width: 32px;
+  position: absolute;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: #28adc4;
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.moon__content__css-active::after {
+  display: initial;
+}
+.moon__content__github::after {
+  display: none;
+  padding: 3px;
+  border-radius: 0 2px 2px 0;
+  box-sizing: content-box;
+  content: "GITHUB";
+  text-align: right;
+  width: 60px;
+  position: absolute;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: var(--green);
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.moon__content__github-active::after {
+  display: initial;
+}
+.moon__content__figma::after {
+  display: none;
+  padding: 3px;
+  border-radius: 0 2px 2px 0;
+  box-sizing: content-box;
+  content: "FIGMA";
+  text-align: right;
+  width: 60px;
+  position: absolute;
+  color: #000;
+  font-size: 12px;
+  font-weight: bold;
+  background-color: var(--violet);
+  left: 28px;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.moon__content__figma-active::after {
   display: initial;
 }
 
