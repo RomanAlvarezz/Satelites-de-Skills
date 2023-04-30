@@ -175,6 +175,7 @@ body {
     }
 
     &__github {
+        border-radius: 50%;
         background-color: #000;
         transform: translate(-50%, -50%);
         outline-color: var(--green);
@@ -187,7 +188,7 @@ body {
         outline-color: var(--violet);
     }
 
-    &__sass, &__github, &__figma {
+    &__sass, &__figma {
         border-radius: 50%;
         display: flex;
         justify-content: center;
@@ -239,7 +240,7 @@ body {
         }
 
         &__github{
-            font-size: 29px;
+            font-size: 28.32px;
             color: var(--green);
             animation: moon-rotate 12s infinite linear;
         }

@@ -169,6 +169,7 @@ body {
   outline-color: var(--red);
 }
 .moon__github {
+  border-radius: 50%;
   background-color: #000;
   transform: translate(-50%, -50%);
   outline-color: var(--green);
@@ -179,7 +180,7 @@ body {
   background-color: var(--violet);
   outline-color: var(--violet);
 }
-.moon__sass, .moon__github, .moon__figma {
+.moon__sass, .moon__figma {
   border-radius: 50%;
   display: flex;
   justify-content: center;
@@ -221,7 +222,7 @@ body {
   width: 25px;
 }
 .moon__content__github {
-  font-size: 29px;
+  font-size: 28.32px;
   color: var(--green);
   animation: moon-rotate 12s infinite linear;
 }
