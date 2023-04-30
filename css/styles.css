@@ -99,6 +99,10 @@ body {
 .sun:active {
   transform: translate(-50%, -50%) scale(0.9);
 }
+.sun-active {
+  outline: solid rgb(216, 216, 58) 2px;
+  outline-offset: 3px;
+}
 
 .ring {
   position: absolute;
@@ -143,39 +147,62 @@ body {
   cursor: pointer;
   z-index: 1;
 }
+.moon-active {
+  outline-offset: 3px;
+  outline-style: solid;
+  outline-width: 2px;
+}
 .moon__html {
   transform: translate(-50%, -50%);
+  border-radius: 50%;
+  outline-color: var(--orange);
 }
 .moon__css {
   transform: translate(-50%, -50%);
-  /* outline: solid #28adc4 2px;
-  outline-offset: 3px; */
+  border-radius: 50%;
+  outline-color: #28adc4;
 }
 .moon__sass {
   transform: translate(-50%, 50%);
   background-color: var(--red);
   bottom: 0;
-  /* outline: solid var(--orange) 2px;
-  outline-offset: 3px; */
+  outline-color: var(--red);
 }
 .moon__github {
   background-color: #000;
   transform: translate(-50%, -50%);
-  /* outline: solid var(--orange) 2px;
-  outline-offset: 3px; */
+  outline-color: var(--green);
 }
 .moon__figma {
   bottom: 0;
   transform: translate(-50%, 50%);
   background-color: var(--violet);
-  /* outline: solid var(--orange) 2px;
-  outline-offset: 3px; */
+  outline-color: var(--violet);
 }
 .moon__sass, .moon__github, .moon__figma {
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+.moon__content::after {
+  display: none;
+  color: #000;
+  font-family: "Ubuntu", sans-serif;
+  border-radius: 0 2px 2px 0;
+  padding: 3px;
+  box-sizing: content-box;
+  text-align: right;
+  position: absolute;
+  font-size: 13px;
+  font-weight: bold;
+  left: 100%;
+  top: 50%;
+  transform: translateY(-50%);
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+}
+.moon__content-active::after {
+  display: block;
 }
 .moon__content__html {
   animation: moon-rotate 5s infinite linear;
@@ -221,114 +248,30 @@ body {
   justify-content: center;
 }
 .moon__content__html::after {
-  font-family: "Ubuntu", sans-serif;
-  display: none;
-  border-radius: 0 2px 2px 0;
-  padding: 3px;
-  box-sizing: content-box;
-  content: "HTML";
-  text-align: right;
   width: 46px;
-  position: absolute;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
+  content: "HTML";
   background-color: var(--orange);
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.moon__content__html-active::after {
-  display: initial;
 }
 .moon__content__css::after {
-  font-family: "Ubuntu", sans-serif;
-  display: none;
-  padding: 3px;
-  border-radius: 0 2px 2px 0;
-  box-sizing: content-box;
-  content: "CSS";
-  text-align: right;
   width: 30px;
-  position: absolute;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
   background-color: #28adc4;
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.moon__content__css-active::after {
-  display: initial;
+  content: "CSS";
 }
 .moon__content__sass::after {
-  font-family: "Ubuntu", sans-serif;
-  display: none;
-  padding: 3px;
-  border-radius: 0 2px 2px 0;
-  box-sizing: content-box;
+  width: 41px;
   content: "SASS";
-  text-align: right;
-  width: 40px;
-  position: absolute;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
   background-color: var(--red);
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.moon__content__sass-active::after {
-  display: initial;
+  left: calc(100% + 1px);
 }
 .moon__content__github::after {
-  font-family: "Ubuntu", sans-serif;
-  display: none;
-  padding: 3px;
-  border-radius: 0 2px 2px 0;
-  box-sizing: content-box;
-  content: "GITHUB";
-  text-align: right;
   width: 61px;
-  position: absolute;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
+  content: "GITHUB";
   background-color: var(--green);
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.moon__content__github-active::after {
-  display: initial;
 }
 .moon__content__figma::after {
-  font-family: "Ubuntu", sans-serif;
-  display: none;
-  padding: 3px;
-  border-radius: 0 2px 2px 0;
-  box-sizing: content-box;
+  width: 54px;
   content: "FIGMA";
-  text-align: right;
-  width: 53px;
-  position: absolute;
-  color: #000;
-  font-size: 13px;
-  font-weight: bold;
   background-color: var(--violet);
-  left: 28px;
-  top: 50%;
-  transform: translateY(-50%);
-  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
-}
-.moon__content__figma-active::after {
-  display: initial;
 }
 
 @keyframes moon-rotate {
