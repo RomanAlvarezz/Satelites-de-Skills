@@ -45,13 +45,45 @@ body {
     justify-content: center;
     align-items: center;
     font-family: sans-serif;
+    overflow: hidden;
 }
 
 .galaxy {
     width: 250px;
     height: 250px;
     position: relative;
+    transform: scale(0.7);
     /* border: solid 1px white; */
+}
+
+@media screen and (min-width: 400px) {
+    .galaxy {
+        transform: scale(0.85);
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .galaxy {
+        transform: scale(0.95);
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .galaxy {
+        transform: scale(1);
+    }
+}
+
+@media screen and (min-width: 700px) {
+    .galaxy {
+        transform: scale(1.2);
+    }
+}
+
+@media screen and (min-width: 800px) {
+    .galaxy {
+        transform: scale(1.5);
+    }
 }
 
 .sun {
@@ -269,6 +301,8 @@ outset
 		transform: rotate(-360deg);
 	}
 }
+
+
 
 
 
